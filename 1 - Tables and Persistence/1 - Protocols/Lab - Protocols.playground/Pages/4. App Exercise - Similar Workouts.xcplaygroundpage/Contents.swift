@@ -7,12 +7,29 @@
  
  Create a protocol `Workout` with two requirements: a settable property called `distance` and a settable property called `time`, both of type `Double`.
  */
-
+protocol WorkOut {
+    var distance: Double { get set }
+    var time: Double { get set }
+}
 
 //:  Create two structs, `RunningWorkout` and `SwimmingWorkout`. Both should conform to the `Workout` protocol. Uncomment the function `simpleWorkoutDescription` below, create an instance of each of your structs, and call `simpleWorkoutDescription` twice, passing in a `RunningWorkout` object and then a `SwimmingWorkout` object.
-//func simpleWorkoutDescription(workout: Workout) {
-//    print("You went \(workout.distance) meters in \(workout.time) seconds.")
-//}
+struct RunningWorkout: WorkOut {
+    var distance: Double
+    
+    var time: Double
+    
+}
+
+struct SwimmingWorkout: WorkOut {
+    var distance: Double
+    
+    var time: Double
+    
+}
+
+func simpleWorkoutDescription(workout: WorkOut) {
+    print("You went \(workout.distance) meters in \(workout.time) seconds.")
+}
 
 
 /*:
